@@ -26,3 +26,4 @@ async def kirk():
                 
                 print(image_url)
 ```
+This prints a random kirkified image from the url (sorry if it syntax errors. i wrote it in the readme)
