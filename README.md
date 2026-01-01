@@ -11,7 +11,10 @@ Simply go to the github [link](https://jtmc-g3.github.io/Kirk-images)
 Here is some basic python code that prints a random image
 
 ```
-async def kirk():
+import requests
+import random
+
+def kirk():
     try:
         response = requests.get("https://jtmc-g3.github.io/Kirk-images/images.json")
         
@@ -25,5 +28,14 @@ async def kirk():
                 image_url = f"https://jtmc-g3.github.io/Kirk-images/{random_image}"
                 
                 print(image_url)
+            else:
+                print("No images found in the JSON data.")
+        else:
+            print(f"Failed to fetch data. Status code: {response.status_code}")
+    except Exception as e:
+        print(f"Error: {e}")
+
+
+kirk()
 ```
 This prints a random kirkified image from the url (sorry if it syntax errors. i wrote it in the readme)
